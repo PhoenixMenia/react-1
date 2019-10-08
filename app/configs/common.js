@@ -160,7 +160,7 @@ export const isLogin = (nextState, replaceState) => {
     sessionStorage.setItem('token', 'key')
   }
   const token = sessionStorage.getItem('token')
-  if (!token) { // 没有token，那就返回首页
+  if (!token) { // 没有token，那就返回登录页
     replaceState('/login')
   }
 }

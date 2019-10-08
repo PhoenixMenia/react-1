@@ -57,7 +57,8 @@ export default class App extends Component {
         menuStyle: true,
       })
     }
-    const { query } = this.props.location
+
+    const { query } = this.props.location // es6 解构赋值
     if (query.ticket) { // 如果是url路径带ticket的话，那么在当前页面做登录的初始化
       validateTickit(this.props.location, (res) => {
         this.setState({
@@ -182,9 +183,10 @@ export default class App extends Component {
 
   render() {
     const { location, children } = this.props
+    // console.log('location, children', location, children)
     const {
       gMenuList, idRenderChild, isIframe, topMenuReskey, leftNav, menuStyle,
-    } = this.state
+    } = this.state // 解构赋值 将this.state.gMenuList简化为gMenuList
     return (
       <LocaleProvider locale={zhCN}>
         <div id="container">
